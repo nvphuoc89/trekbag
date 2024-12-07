@@ -21,6 +21,7 @@ export default function AddItemForm({ onAddItem }) {
       <input
         ref={inputRef}
         type="text"
+        placeholder="Toothbursh..."
         value={itemText}
         autoFocus
         onChange={(e) => {
