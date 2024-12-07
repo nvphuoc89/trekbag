@@ -5,9 +5,12 @@ import Footer from "./Footer";
 import Header from "./Header";
 import ItemList from "./ItemList";
 import Sidebar from "./Sidebar";
+import { useEffect } from "react";
 
 function App() {
-  const [items, setItems] = useState(initialItemList);
+  const [items, setItems] = useState(
+    () => JSON.parse(localStorage.getItem("items")) || initialItemList
+  );
 
   const handleAddItem = (name) => {
     const newItems = [...items, { id: Date.now(), name, packed: false }];
@@ -53,6 +56,10 @@ function App() {
     hadleResetToInitial,
     handleRemoveAllItem,
   };
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   return (
     <>
