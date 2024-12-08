@@ -1,7 +1,7 @@
 export const buttonText = {
   markAllComplete: "Mark all as complete",
   markAllIncomplete: "Mark all as incomplete",
-  resetToInti: "Reset to initial",
+  resetToInit: "Reset to initial",
   removeAll: "Remove all items",
 };
 
